@@ -316,9 +316,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 If you have any questions or feedback, feel free to reach out:
 
-- **Name**: Your Name
-- **Email**: your.email@example.com
-- **GitHub**: [yourusername](https://github.com/yourusername)
+- **Name**: Mahmudi Husain Hasbullah
+- **Email**: husainhasbulah@gmail.com
+- **GitHub**: [mhusainh](https://github.com/mhusainh)
 
 ---
 
