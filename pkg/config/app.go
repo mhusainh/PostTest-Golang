@@ -2,18 +2,19 @@ package config
 
 import (
 	"log"
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/sqlite" // Driver SQLite
+
 	"Weekly-Task3/pkg/models"
+	"gorm.io/driver/sqlite"
+	"gorm.io/gorm"
 )
 
 func ConnectDB() *gorm.DB {
-	db, err := gorm.Open("sqlite3", "bookstore.db") // Buat koneksi ke SQLite
+	db, err := gorm.Open(sqlite.Open("bookstore.db"), &gorm.Config{}) // Buat koneksi ke SQLite
 	if err != nil {
 		log.Fatalf("Failed to connect to database: %v", err) // Tangkap error jika koneksi gagal
 	}
 
-	if err := db.AutoMigrate(&models.Book{}).Error; err != nil { // Migrasi dan cek error
+	if err := db.AutoMigrate(&models.Book{}); err != nil { // Migrasi dan cek error
 		log.Fatalf("Migration failed: %v", err)
 	}
 

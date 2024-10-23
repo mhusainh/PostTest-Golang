@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"errors"
 	"encoding/json"
 	"log"
 	"net/http"
@@ -17,7 +18,7 @@ func HandleErr(err error) {
 func RespondJSON(w http.ResponseWriter, status int, payload interface{}) {
 	response, err := json.Marshal(payload) // Ubah payload menjadi JSON
 	if err != nil {
-		http.Error(w, "Failed to encode JSON", http.StatusInternalServerError)
+		RespondError(w, http.StatusInternalServerError, "Failed to encode JSON")
 		return
 	}
 	w.Header().Set("Content-Type", "application/json") // Atur header respons
@@ -28,4 +29,17 @@ func RespondJSON(w http.ResponseWriter, status int, payload interface{}) {
 // RespondError digunakan untuk mengirim respons error dalam format JSON
 func RespondError(w http.ResponseWriter, status int, message string) {
 	RespondJSON(w, status, map[string]string{"error": message}) // Kirim pesan error dalam JSON
+}
+
+// ParseBody digunakan untuk memparsing body permintaan HTTP ke dalam struct yang diberikan
+func ParseBody(r *http.Request, x interface{}) error {
+    if r.Body == nil {
+        return errors.New("request body is empty")
+    }
+    decoder := json.NewDecoder(r.Body)
+    err := decoder.Decode(x)
+    if err != nil {
+        return err
+    }
+    return nil
 }

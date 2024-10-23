@@ -3,17 +3,15 @@ package main
 import (
 	"log"
 	"net/http"
+
 	"Weekly-Task3/pkg/config"
+	"Weekly-Task3/pkg/controllers"
 	"Weekly-Task3/pkg/routes"
 )
 
 func main() {
-	db := config.ConnectDB() // Hubungkan ke database
-	defer func() {
-		if err := db.Close(); err != nil { // Tutup koneksi dan cek error
-			log.Fatalf("Error closing database: %v", err)
-		}
-	}()
+	db := config.ConnectDB()   // Hubungkan ke database
+	controllers.DB = db        // Set koneksi DB di controller
 
 	router := routes.SetupRoutes() // Siapkan semua rute
 
