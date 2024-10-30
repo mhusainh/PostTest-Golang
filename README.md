@@ -1,4 +1,4 @@
-# Weekly-Task3: Bookstore RESTful API
+# PostTest-Golang: Bookstore RESTful API
 
 ![Go](https://img.shields.io/badge/Go-1.20-blue.svg)
 ![GORM](https://img.shields.io/badge/GORM-v2.0.0-green.svg)
@@ -23,7 +23,7 @@
 
 ## About
 
-**Weekly-Task3** is a simple RESTful API built with Go (Golang) for managing a bookstore's inventory. The API allows users to perform CRUD (Create, Read, Update, Delete) operations on book records stored in a SQLite database. It leverages GORM v2 for ORM (Object-Relational Mapping) and Gorilla Mux for HTTP request routing.
+**PostTest-Golang** is a simple RESTful API built with Go (Golang) for managing a bookstore's inventory. The API allows users to perform CRUD (Create, Read, Update, Delete) operations on book records stored in a SQLite database. It leverages GORM v2 for ORM (Object-Relational Mapping) and Gorilla Mux for HTTP request routing.
 
 ## Features
 
@@ -56,13 +56,13 @@ Before you begin, ensure you have met the following requirements:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/Weekly-Task3.git
+   git clone https://github.com/yourusername/PostTest-Golang.git
    ```
 
 2. **Navigate to the Project Directory**
 
    ```bash
-   cd Weekly-Task3
+   cd PostTest-Golang
    ```
 
 3. **Initialize Go Modules**
@@ -246,7 +246,7 @@ You can use tools like [Postman](https://www.postman.com/) or `curl` to test the
 ## Project Structure
 
 ```
-Weekly-Task3/
+PostTest-Golang/
 ├── main.go
 ├── go.mod
 ├── go.sum
@@ -282,7 +282,7 @@ Contributions are welcome! Please follow these steps:
 2. **Clone Your Fork**
 
    ```bash
-   git clone https://github.com/yourusername/Weekly-Task3.git
+   git clone https://github.com/yourusername/PostTest-Golang.git
    ```
 
 3. **Create a New Branch**
@@ -322,4 +322,4 @@ If you have any questions or feedback, feel free to reach out:
 
 ---
 
-Thank you for checking out **Weekly-Task3**! We hope this project serves as a useful reference for building RESTful APIs with Go. Happy coding!
+Thank you for checking out **PostTest-Golang**! We hope this project serves as a useful reference for building RESTful APIs with Go. Happy coding!
